@@ -37,6 +37,7 @@ body {
   background-attachment: fixed;
   color: var(--text-light);
   line-height: 1.85;
+  padding-bottom: 78px;
 }
 .serif { font-family: 'Noto Serif JP', serif; }
 .container {
@@ -208,14 +209,8 @@ header {
   font-size: 0.95rem;
   letter-spacing: 0.15em;
   color: var(--description-text);
-  margin-bottom: 44px;
+  margin-bottom: 0;
   line-height: 2;
-}
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 .btn {
   display: inline-block;
@@ -596,6 +591,47 @@ footer {
   display: block;
   margin-bottom: 12px;
 }
+.fixed-phone-reserve {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 64px;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  background:
+    linear-gradient(180deg, rgba(159,17,23,0.98), rgba(117,10,14,0.98)),
+    var(--accent-deep);
+  color: var(--text-light);
+  text-decoration: none;
+  border-top: 1px solid rgba(246,234,214,0.28);
+  box-shadow: 0 -8px 26px rgba(0,0,0,0.35);
+  letter-spacing: 0.12em;
+}
+.fixed-phone-reserve span {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.fixed-phone-reserve strong {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+@media (max-width: 480px) {
+  body { padding-bottom: 86px; }
+  .fixed-phone-reserve {
+    flex-direction: column;
+    gap: 2px;
+    min-height: 72px;
+  }
+  .fixed-phone-reserve span,
+  .fixed-phone-reserve strong { font-size: 0.92rem; }
+}
 .copyright {
   text-align: center;
   font-size: 0.72rem;
@@ -636,7 +672,7 @@ footer {
           <li><a href="#menu" class="nav-link">MENU</a></li>
           <li><a href="#gallery" class="nav-link">GALLERY</a></li>
           <li><a href="#information" class="nav-link">ACCESS</a></li>
-          <li><a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn-reserve">ご 予 約</a></li>
+          <li><a href="tel:0726931258" class="btn-reserve">電話予約</a></li>
         </ul>
         <button class="menu-toggle sp-only" id="mobile-menu-toggle" aria-label="メニューを開く">
           <span></span><span></span><span></span>
@@ -655,10 +691,6 @@ footer {
     <span class="hero-label">IZAKAYA KAZUYOSHI</span>
     <h1 class="serif">素材と技が生む、<br>ぬくもりの一皿</h1>
     <p>元寿司職人の店主が、今日も丁寧に腕を振るっています。<br>カウンターの温もりと、鮮魚の旨みをともに。</p>
-    <div class="hero-btns">
-      <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary">ご予約はこちら</a>
-      <a href="tel:0726931258" class="btn btn-outline">当日は TEL：072-693-1258</a>
-    </div>
   </div>
 </section>
 
@@ -844,8 +876,7 @@ footer {
           </tr>
         </table>
         <div class="reserve-links">
-          <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary">ぐるなびで予約する</a>
-          <a href="tel:0726931258" class="btn btn-outline">電話で予約する</a>
+          <a href="tel:0726931258" class="btn btn-primary">電話予約</a>
         </div>
       </div>
       <div class="access-map reveal">
@@ -884,16 +915,21 @@ footer {
       <div class="footer-contact">
         <h4>RESERVATION</h4>
         <p>
-          ご予約はぐるなびまたはお電話にて承ります。<br>
-          当日のご予約はお電話のみとなります。
+          ご予約はお電話にて承ります。<br>
+          当日のご予約もお気軽にお問い合わせください。
         </p>
         <a href="tel:0726931258" class="footer-tel">072-693-1258</a>
-        <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:10px 20px;">ぐるなびで予約</a>
+        <a href="tel:0726931258" class="btn btn-primary" style="font-size:0.8rem;padding:10px 20px;">電話予約</a>
       </div>
     </div>
     <p class="copyright">&copy; 2024 居酒屋 和吉 All Rights Reserved.</p>
   </div>
 </footer>
+
+<a href="tel:0726931258" class="fixed-phone-reserve" aria-label="電話予約 072-693-1258">
+  <span>電話予約</span>
+  <strong>072-693-1258</strong>
+</a>
 
 <script>
 // Mobile menu

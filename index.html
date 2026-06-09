@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>居酒屋 和吉 | 高槻市 寿町</title>
+<meta name="description" content="大阪府高槻市寿町の居酒屋 和吉。元寿司職人の店主が目利きした鮮魚と、炭火の焼き鳥をご用意しています。当日のご予約はお電話にて。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-mid: #242424;
+  --bg-section: #2a2420;
+  --bg-light: #f5f0e8;
+  --bg-cream: #faf6ef;
+  --accent: #c8975c;
+  --text-dark: #1a1a1a;
+  --text-light: #f0ebe0;
+  --text-muted: rgba(240,235,224,0.6);
+  --border: rgba(200,151,92,0.25);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.85;
+}
+.serif { font-family: 'Noto Serif JP', serif; }
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .pc-only { display: none !important; }
+}
+@media (min-width: 769px) {
+  .sp-only { display: none !important; }
+}
+
+/* ============================
+   HEADER
+   ============================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(18,16,14,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.logo-wrap {
+  text-decoration: none;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  transition: opacity 0.25s;
+}
+.nav-link:hover { opacity: 1; }
+.btn-reserve {
+  display: inline-block;
+  padding: 9px 22px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  transition: background 0.25s;
+}
+.btn-reserve:hover { background: #b07840; }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--text-light);
+  transition: all 0.3s;
+}
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: rgba(18,16,14,0.98);
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu li { width: 100%; text-align: center; border-bottom: 1px solid var(--border); }
+  .nav-link { display: block; padding: 18px; font-size: 0.95rem; opacity: 0.9; }
+  .nav-menu .btn-reserve { margin: 16px; }
+}
+
+/* ============================
+   HERO
+   ============================ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('img/photo01.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.38);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 10px;
+}
+.hero-content h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.hero-content p {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+  line-height: 2;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #b07840; }
+.btn-outline {
+  border: 1px solid rgba(240,235,224,0.5);
+  color: var(--text-light);
+}
+.btn-outline:hover { border-color: var(--text-light); background: rgba(255,255,255,0.05); }
+
+/* ============================
+   SECTIONS 共通
+   ============================ */
+section { padding: 96px 0; }
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-title .en-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.38em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.section-title h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* ============================
+   CONCEPT
+   ============================ */
+.concept { background: var(--bg-mid); }
+.concept-text {
+  text-align: center;
+  line-height: 2.4;
+  font-size: 0.97rem;
+  letter-spacing: 0.06em;
+  max-width: 660px;
+  margin: 0 auto 60px;
+}
+
+/* USP Grid */
+.usp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+@media (max-width: 768px) {
+  .usp-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+.usp-item { background: var(--bg-dark); }
+.usp-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  background: #333;
+}
+.usp-content { padding: 28px 28px 32px; }
+.usp-content .num {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+.usp-content h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+.usp-content p {
+  font-size: 0.88rem;
+  line-height: 2;
+  color: var(--text-muted);
+}
+
+/* ============================
+   STORY
+   ============================ */
+.story { background: var(--bg-section); }
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .feature-section { grid-template-columns: 1fr; gap: 32px; }
+  .feature-section .feature-img { order: -1; }
+}
+.feature-img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  background: #2a2a2a;
+}
+.feature-text .badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 3px 10px;
+  margin-bottom: 20px;
+}
+.feature-text h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+.feature-text p {
+  font-size: 0.9rem;
+  line-height: 2.15;
+  color: var(--text-muted);
+}
+
+/* ============================
+   MENU
+   ============================ */
+.menu { background: var(--bg-dark); }
+.menu-intro {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+  line-height: 2;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.menu-card {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #2a2a2a;
+}
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s;
+}
+.menu-card:hover img { transform: scale(1.07); }
+.menu-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  padding: 24px 14px 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* ============================
+   GALLERY
+   ============================ */
+.gallery { background: var(--bg-mid); }
+.gallery-wrap { position: relative; }
+.gallery-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-slide {
+  flex: 0 0 320px;
+  height: 240px;
+  scroll-snap-align: start;
+  background: #2a2a2a;
+}
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .gallery-slide { flex: 0 0 260px; height: 200px; }
+}
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.gallery-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(200,151,92,0.5);
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+.gallery-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+/* ============================
+   INFORMATION
+   ============================ */
+.information { background: var(--bg-section); }
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .access-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.access-table tr {
+  border-bottom: 1px solid var(--border);
+}
+.access-table th,
+.access-table td {
+  padding: 15px 0;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  vertical-align: top;
+  text-align: left;
+}
+.access-table th {
+  width: 28%;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding-right: 16px;
+  white-space: nowrap;
+  font-size: 0.82rem;
+}
+.note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+.reserve-links {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.access-map iframe {
+  width: 100%;
+  height: 380px;
+  display: block;
+  filter: grayscale(0.3);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer {
+  background: #0f0e0c;
+  padding: 70px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 48px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+.footer-store h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+.footer-store p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+.footer-nav h4,
+.footer-contact h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.footer-nav ul { list-style: none; }
+.footer-nav ul li { margin-bottom: 11px; }
+.footer-nav ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.83rem;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.footer-nav ul li a:hover { color: var(--text-light); }
+.footer-contact p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+.footer-tel {
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 12px;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+/* ============================
+   REVEAL ANIMATION
+   ============================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ============================
+     HEADER
+     ============================ -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo-wrap">
+        <div class="logo-icon">和</div>
+        <span class="logo serif">居酒屋 和吉</span>
+      </a>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#concept" class="nav-link">CONCEPT</a></li>
+          <li><a href="#menu" class="nav-link">MENU</a></li>
+          <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+          <li><a href="#information" class="nav-link">ACCESS</a></li>
+          <li><a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn-reserve">ご 予 約</a></li>
+        </ul>
+        <button class="menu-toggle sp-only" id="mobile-menu-toggle" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============================
+     HERO
+     ============================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-label">IZAKAYA KAZUYOSHI</span>
+    <h1 class="serif">素材と技が生む、<br>ぬくもりの一皿</h1>
+    <p>元寿司職人の店主が、今日も丁寧に腕を振るっています。<br>カウンターの温もりと、鮮魚の旨みをともに。</p>
+    <div class="hero-btns">
+      <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary">ご予約はこちら</a>
+      <a href="tel:0726931258" class="btn btn-outline">当日は TEL：072-693-1258</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CONCEPT / STRENGTH
+     ============================ -->
+<section class="concept" id="concept">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="en-label">STRENGTH</span>
+      <h2 class="serif">和吉が大切にしていること</h2>
+    </div>
+    <p class="concept-text reveal">
+      目利きで選んだ新鮮な魚を、職人の手でしっかりと仕込む。<br>
+      それだけを積み重ねてきた居酒屋です。<br>
+      昼間と夜とで全く表情を変える食材の中から、<br>
+      その日の「一番」をカウンターでお出ししています。
+    </p>
+    <div class="usp-grid">
+      <div class="usp-item reveal">
+        <img class="usp-img" src="img/photo02.jpg" alt="鮮魚">
+        <div class="usp-content">
+          <span class="num">01</span>
+          <h3 class="serif">職人の目利きが光る<br>鮮魚料理</h3>
+          <p>元寿司職人として長年鍛えてきた目利きの感覚で、毎日新鮮な魚を厳選しています。お造りや煮付けなど、素材の持ち味を活かした調理でお届けします。</p>
+        </div>
+      </div>
+      <div class="usp-item reveal">
+        <img class="usp-img" src="img/photo03.jpg" alt="焼き鳥">
+        <div class="usp-content">
+          <span class="num">02</span>
+          <h3 class="serif">気負いなく通える、<br>アットホームな空間</h3>
+          <p>ひとり飲みでも、仲間との集まりでも、どちらにも馴染む雰囲気が自慢です。カウンターに腰掛けて炭火の焼き鳥を楽しむ時間は、ここだけの贅沢です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     STORY
+     ============================ -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="en-label">STORY</span>
+      <h2 class="serif">職人の歩みと、この店の原点</h2>
+    </div>
+    <div class="feature-section">
+      <div class="feature-img reveal">
+        <img src="img/photo04.jpg" alt="店内の様子">
+      </div>
+      <div class="feature-text reveal">
+        <span class="badge">KAZUYOSHI STORY</span>
+        <h3 class="serif">高槻の地で刻んできた、<br>一皿一皿への誠実さ</h3>
+        <p>
+          2008年11月、元寿司職人の店主が大阪府高槻市寿町に居酒屋和吉を開きました。<br><br>
+          寿司台で磨いてきた鮮魚の目利きと仕込みの技を、居酒屋という場に移してもなお変わることなく続けています。刺身一枚の厚みにもこだわり、焼き鳥一本の火加減も妥協しない。そんな積み重ねが、今のお店をつくっています。<br><br>
+          20席のこじんまりとした空間だからこそ、お客様ひとりひとりと向き合える距離感があります。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     MENU
+     ============================ -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="en-label">MENU</span>
+      <h2 class="serif">お品書き</h2>
+    </div>
+    <p class="menu-intro reveal">
+      旬の魚のお造り・焼き鳥・煮込み・揚げ物など、<br>
+      その日の仕入れに合わせた一品料理を取り揃えています。
+    </p>
+    <div class="menu-grid reveal">
+      <div class="menu-card">
+        <img src="img/photo05.jpg" alt="お造り">
+        <div class="menu-card-label">お造り盛り合わせ</div>
+      </div>
+      <div class="menu-card">
+        <img src="img/photo06.jpg" alt="焼き鳥">
+        <div class="menu-card-label">炭火焼き鳥</div>
+      </div>
+      <div class="menu-card">
+        <img src="img/photo07.jpg" alt="煮魚">
+        <div class="menu-card-label">旬魚の煮付け</div>
+      </div>
+      <div class="menu-card">
+        <img src="img/photo08.jpg" alt="一品料理">
+        <div class="menu-card-label">季節の一品</div>
+      </div>
+      <div class="menu-card">
+        <img src="img/photo09.jpg" alt="揚げ物">
+        <div class="menu-card-label">揚げ出し・唐揚げ</div>
+      </div>
+      <div class="menu-card">
+        <img src="img/photo10.jpg" alt="お飲み物">
+        <div class="menu-card-label">お飲み物各種</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     GALLERY
+     ============================ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="en-label">GALLERY</span>
+      <h2 class="serif">ギャラリー</h2>
+    </div>
+    <div class="gallery-wrap reveal">
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-slide"><img src="img/photo11.jpg" alt="店内"></div>
+        <div class="gallery-slide"><img src="img/photo12.jpg" alt="料理"></div>
+        <div class="gallery-slide"><img src="img/photo13.jpg" alt="カウンター"></div>
+        <div class="gallery-slide"><img src="img/photo14.jpg" alt="料理"></div>
+        <div class="gallery-slide"><img src="img/photo15.jpg" alt="店内"></div>
+        <div class="gallery-slide"><img src="img/photo16.jpg" alt="料理"></div>
+        <div class="gallery-slide"><img src="img/photo17.jpg" alt="一品"></div>
+        <div class="gallery-slide"><img src="img/photo18.jpg" alt="雰囲気"></div>
+      </div>
+    </div>
+    <div class="gallery-controls">
+      <button class="gallery-btn" id="gallery-prev" aria-label="前へ">&#8249;</button>
+      <button class="gallery-btn" id="gallery-next" aria-label="次へ">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     INFORMATION
+     ============================ -->
+<section class="information" id="information">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="en-label">INFORMATION</span>
+      <h2 class="serif">店舗情報・アクセス</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-info reveal">
+        <table class="access-table">
+          <tr>
+            <th>店名</th>
+            <td>居酒屋 和吉</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>〒569-0826<br>大阪府高槻市寿町３丁目３３−２４<br>長岡ハイツ 101</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td><a href="tel:0726931258" style="color:inherit;">072-693-1258</a><br><span class="note">※当日のご予約はお電話にてお願いします</span></td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>16:00 〜 翌0:00</td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>不定休</td>
+          </tr>
+          <tr>
+            <th>アクセス</th>
+            <td>阪急京都線 富田駅 徒歩約20分<br>JR京都線 摂津富田駅 徒歩約25分</td>
+          </tr>
+          <tr>
+            <th>席数</th>
+            <td>全20席（カウンター・テーブル）</td>
+          </tr>
+          <tr>
+            <th>お支払い</th>
+            <td>PayPay 対応</td>
+          </tr>
+          <tr>
+            <th>Instagram</th>
+            <td><a href="https://www.instagram.com/chuanshangheji5/" target="_blank" rel="noopener" style="color:var(--accent);">@chuanshangheji5</a></td>
+          </tr>
+        </table>
+        <div class="reserve-links">
+          <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary">ぐるなびで予約する</a>
+          <a href="tel:0726931258" class="btn btn-outline">電話で予約する</a>
+        </div>
+      </div>
+      <div class="access-map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.094718282301!2d135.60125907579885!3d34.82871097287451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60011d59db0118bb%3A0xf1d81c552702d7cf!2z5bGF6YWS5bGLIOWSjOWQiQ!5e0!3m2!1sja!2sjp!4v1780933258966!5m2!1sja!2sjp"
+          width="600" height="380" style="border:0;width:100%;height:380px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="居酒屋 和吉 地図"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+     ============================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-store">
+        <h3 class="serif">居酒屋 和吉</h3>
+        <p>
+          〒569-0826 大阪府高槻市寿町３丁目３３−２４ 長岡ハイツ 101<br>
+          TEL：072-693-1258<br>
+          営業時間：16:00 〜 翌0:00　定休日：不定休
+        </p>
+      </div>
+      <div class="footer-nav">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="#concept">CONCEPT</a></li>
+          <li><a href="#menu">MENU</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#information">ACCESS</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>RESERVATION</h4>
+        <p>
+          ご予約はぐるなびまたはお電話にて承ります。<br>
+          当日のご予約はお電話のみとなります。
+        </p>
+        <a href="tel:0726931258" class="footer-tel">072-693-1258</a>
+        <a href="https://r.gnavi.co.jp/63wgjsws0000/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:10px 20px;">ぐるなびで予約</a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2024 居酒屋 和吉 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const toggle = document.getElementById('mobile-menu-toggle');
+const menu = document.getElementById('nav-menu');
+if (toggle && menu) {
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => menu.classList.remove('open'));
+  });
+}
+
+// Gallery scroll
+const track = document.getElementById('gallery-track');
+const prevBtn = document.getElementById('gallery-prev');
+const nextBtn = document.getElementById('gallery-next');
+if (track && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => track.scrollBy({ left: -330, behavior: 'smooth' }));
+  nextBtn.addEventListener('click', () => track.scrollBy({ left: 330, behavior: 'smooth' }));
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

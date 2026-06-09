@@ -22,6 +22,7 @@
   --text-dark: #120b08;
   --text-light: #f6ead6;
   --text-muted: rgba(246,234,214,0.68);
+  --description-red: rgba(255,58,63,0.84);
   --border: rgba(215,25,32,0.3);
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -65,7 +66,7 @@ header {
     var(--tight-black);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
-  color: var(--accent);
+  color: var(--text-light);
 }
 .header-inner {
   display: flex;
@@ -75,7 +76,7 @@ header {
 }
 .logo-wrap {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--text-light);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -86,7 +87,7 @@ header {
   border-radius: 50%;
   object-fit: cover;
   background: var(--tight-black);
-  border: 1px solid var(--accent);
+  border: 1px solid var(--text-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +107,7 @@ header {
   list-style: none;
 }
 .nav-link {
-  color: var(--accent);
+  color: var(--text-light);
   text-decoration: none;
   font-size: 0.82rem;
   letter-spacing: 0.12em;
@@ -118,7 +119,7 @@ header {
   display: inline-block;
   padding: 9px 22px;
   background: var(--accent);
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   font-size: 0.8rem;
   letter-spacing: 0.12em;
@@ -138,7 +139,7 @@ header {
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--accent);
+  background: var(--text-light);
   transition: all 0.3s;
 }
 @media (max-width: 768px) {
@@ -190,9 +191,9 @@ header {
   display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.35em;
-  color: var(--accent);
+  color: var(--text-light);
   margin-bottom: 22px;
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid rgba(246,234,214,0.6);
   padding-bottom: 10px;
 }
 .hero-content h1 {
@@ -206,7 +207,7 @@ header {
 .hero-content p {
   font-size: 0.95rem;
   letter-spacing: 0.15em;
-  color: var(--text-muted);
+  color: var(--description-red);
   margin-bottom: 44px;
   line-height: 2;
 }
@@ -227,7 +228,7 @@ header {
 }
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--text-light);
 }
 .btn-primary:hover { background: var(--accent-deep); }
 .btn-outline {
@@ -274,6 +275,7 @@ section { padding: 96px 0; }
   letter-spacing: 0.06em;
   max-width: 660px;
   margin: 0 auto 60px;
+  color: var(--description-red);
 }
 
 /* USP Grid */
@@ -300,7 +302,7 @@ section { padding: 96px 0; }
 .usp-content .num {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
-  color: var(--accent);
+  color: var(--text-light);
   display: block;
   margin-bottom: 10px;
 }
@@ -315,7 +317,7 @@ section { padding: 96px 0; }
 .usp-content p {
   font-size: 0.88rem;
   line-height: 2;
-  color: var(--text-muted);
+  color: var(--description-red);
 }
 
 /* ============================
@@ -347,8 +349,8 @@ section { padding: 96px 0; }
   display: inline-block;
   font-size: 0.7rem;
   letter-spacing: 0.28em;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--text-light);
+  border: 1px solid rgba(246,234,214,0.6);
   padding: 3px 10px;
   margin-bottom: 20px;
 }
@@ -363,7 +365,7 @@ section { padding: 96px 0; }
 .feature-text p {
   font-size: 0.9rem;
   line-height: 2.15;
-  color: var(--text-muted);
+  color: var(--description-red);
 }
 
 /* ============================
@@ -377,7 +379,7 @@ section { padding: 96px 0; }
 .menu-intro {
   text-align: center;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--description-red);
   margin-bottom: 50px;
   line-height: 2;
 }
@@ -503,7 +505,7 @@ section { padding: 96px 0; }
 }
 .access-table th {
   width: 28%;
-  color: var(--accent);
+  color: var(--text-light);
   font-weight: 500;
   letter-spacing: 0.08em;
   padding-right: 16px;
@@ -537,7 +539,7 @@ footer {
     linear-gradient(180deg, rgba(18,9,6,0.96), rgba(8,6,5,1)),
     var(--tight-black);
   padding: 70px 0 28px;
-  color: var(--accent);
+  color: var(--text-light);
 }
 .footer-grid {
   display: grid;
@@ -555,33 +557,33 @@ footer {
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   margin-bottom: 14px;
-  color: var(--accent);
+  color: var(--text-light);
 }
 .footer-store p {
   font-size: 0.83rem;
-  color: rgba(255,58,63,0.82);
+  color: rgba(246,234,214,0.78);
   line-height: 1.9;
 }
 .footer-nav h4,
 .footer-contact h4 {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
-  color: var(--accent);
+  color: var(--text-light);
   margin-bottom: 18px;
 }
 .footer-nav ul { list-style: none; }
 .footer-nav ul li { margin-bottom: 11px; }
 .footer-nav ul li a {
-  color: var(--accent);
+  color: var(--text-light);
   text-decoration: none;
   font-size: 0.83rem;
   letter-spacing: 0.08em;
   transition: color 0.2s;
 }
-.footer-nav ul li a:hover { color: #ff3a3f; }
+.footer-nav ul li a:hover { color: #fff4df; }
 .footer-contact p {
   font-size: 0.83rem;
-  color: rgba(255,58,63,0.82);
+  color: rgba(246,234,214,0.78);
   line-height: 1.9;
   margin-bottom: 16px;
 }
@@ -589,7 +591,7 @@ footer {
   font-size: 1.15rem;
   letter-spacing: 0.08em;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text-light);
   text-decoration: none;
   display: block;
   margin-bottom: 12px;
@@ -597,7 +599,7 @@ footer {
 .copyright {
   text-align: center;
   font-size: 0.72rem;
-  color: rgba(255,58,63,0.7);
+  color: rgba(246,234,214,0.62);
   letter-spacing: 0.12em;
   opacity: 0.55;
 }
@@ -838,7 +840,7 @@ footer {
           </tr>
           <tr>
             <th>Instagram</th>
-            <td><a href="https://www.instagram.com/chuanshangheji5/" target="_blank" rel="noopener" style="color:var(--accent);">@chuanshangheji5</a></td>
+            <td><a href="https://www.instagram.com/chuanshangheji5/" target="_blank" rel="noopener" style="color:var(--text-light);">@chuanshangheji5</a></td>
           </tr>
         </table>
         <div class="reserve-links">

@@ -241,6 +241,262 @@ header {
 .btn-outline:hover { border-color: var(--text-light); background: rgba(255,255,255,0.05); }
 
 /* ============================
+   INSTAGRAM
+   ============================ */
+.instagram-section {
+  background:
+    radial-gradient(circle at top right, rgba(215,25,32,0.2), transparent 28%),
+    linear-gradient(180deg, rgba(8,6,5,0.9), rgba(45,26,16,0.94)),
+    var(--bg-mid);
+}
+.instagram-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 44px;
+}
+.instagram-header .section-title {
+  margin-bottom: 0;
+  text-align: left;
+}
+.instagram-embed {
+  padding: 28px;
+  background: rgba(8,6,5,0.58);
+  border: 1px solid rgba(215,25,32,0.18);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.instagram-embed::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(246,234,214,0.08);
+  pointer-events: none;
+}
+.instagram-frame-top,
+.instagram-frame-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.instagram-frame-top {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(246,234,214,0.12);
+}
+.instagram-frame-bottom {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(246,234,214,0.12);
+}
+.instagram-frame-title {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.instagram-frame-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.instagram-frame-heading span,
+.instagram-frame-note {
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+}
+.instagram-frame-note {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.instagram-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(246,234,214,0.2);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+.instagram-profile-link:hover {
+  background: rgba(246,234,214,0.06);
+}
+.instagram-desktop-widget behold-widget {
+  display: block;
+  min-height: 420px;
+}
+.instagram-mobile-carousel {
+  display: none;
+}
+.instagram-mobile-track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.instagram-mobile-track::-webkit-scrollbar {
+  display: none;
+}
+.instagram-mobile-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+.instagram-mobile-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(246,234,214,0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+}
+.instagram-mobile-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: rgba(246,234,214,0.06);
+}
+.instagram-mobile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.instagram-mobile-body {
+  padding: 14px 14px 16px;
+}
+.instagram-mobile-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: #f0d9bc;
+}
+.instagram-mobile-caption {
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--description-text);
+}
+.instagram-mobile-counter {
+  display: none;
+  margin-top: 18px;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.18em;
+  color: var(--text-light);
+  padding: 10px 14px 0;
+}
+@media (max-width: 768px) {
+  .instagram-section {
+    padding: 56px 0;
+  }
+  .instagram-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .instagram-header .section-title {
+    text-align: left;
+  }
+  .instagram-header .section-title .en-label {
+    margin-bottom: 8px;
+  }
+  .instagram-header .section-title h2 {
+    font-size: 1.28rem;
+    line-height: 1.55;
+  }
+  .instagram-embed {
+    padding: 12px 12px 14px;
+  }
+  .instagram-frame-top,
+  .instagram-frame-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .instagram-frame-top {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .instagram-frame-bottom {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .instagram-desktop-widget {
+    display: none;
+  }
+  .instagram-mobile-carousel {
+    display: block;
+  }
+  .instagram-frame-heading span {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+  .instagram-profile-link {
+    padding: 8px 12px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+  .instagram-mobile-track:empty::before {
+    content: 'Instagramを読み込み中です';
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 240px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  .instagram-mobile-media {
+    aspect-ratio: 1 / 0.68;
+    max-height: 210px;
+  }
+  .instagram-mobile-body {
+    padding: 10px 10px 12px;
+  }
+  .instagram-mobile-meta {
+    margin-bottom: 6px;
+    font-size: 0.64rem;
+  }
+  .instagram-mobile-caption {
+    font-size: 0.76rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .instagram-frame-note {
+    font-size: 0.7rem;
+    line-height: 1.55;
+  }
+  .instagram-mobile-counter.is-visible {
+    display: block;
+  }
+  .instagram-mobile-counter {
+    margin-top: 10px;
+    padding-top: 6px;
+    font-size: 0.84rem;
+  }
+}
+
+/* ============================
    SECTIONS 共通
    ============================ */
 section { padding: 96px 0; }
@@ -730,6 +986,7 @@ footer {
       <nav>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#concept" class="nav-link">CONCEPT</a></li>
+          <li><a href="#instagram" class="nav-link">INSTAGRAM</a></li>
           <li><a href="#menu" class="nav-link">MENU</a></li>
           <li><a href="#gallery" class="nav-link">GALLERY</a></li>
           <li><a href="#information" class="nav-link">ACCESS</a></li>
@@ -753,7 +1010,42 @@ footer {
   <div class="hero-content">
     <span class="hero-label">IZAKAYA KAZUYOSHI</span>
     <h1 class="serif">素材と技が生む、<br>ぬくもりの一皿</h1>
-    <p>元寿司職人の店主が、今日も丁寧に腕を振るっています。<br>焼き鳥や一品料理を囲みながら、ほっと過ごせる一軒です。</p>
+    <p>元寿司職人の店主が、<br>今日も丁寧に腕を振るっています。<br>焼き鳥や一品料理を囲みながら、<br>ほっと過ごせる一軒です。</p>
+  </div>
+</section>
+
+<!-- ============================
+     INSTAGRAM
+     ============================ -->
+<section class="instagram-section" id="instagram">
+  <div class="container">
+    <div class="instagram-header">
+      <div class="section-title reveal">
+        <span class="en-label">INSTAGRAM</span>
+        <h2 class="serif">最新のお知らせと日々の一皿</h2>
+      </div>
+    </div>
+    <div class="instagram-embed reveal">
+      <div class="instagram-frame-top">
+        <div class="instagram-frame-title">
+          <div class="instagram-frame-heading">
+            <span>営業案内・おすすめ・臨時のお知らせ</span>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/chuanshangheji5/" class="instagram-profile-link" target="_blank" rel="noopener">@chuanshangheji5</a>
+      </div>
+      <div class="instagram-desktop-widget">
+        <behold-widget id="instagram-widget" feed-id="tRNlYwXLClIADujxrIV8"></behold-widget>
+      </div>
+      <div class="instagram-mobile-carousel" id="instagram-mobile-carousel">
+        <div class="instagram-mobile-track" id="instagram-mobile-track"></div>
+        <div class="instagram-mobile-counter" id="instagram-mobile-counter" aria-live="polite">1/3</div>
+      </div>
+      <div class="instagram-frame-bottom">
+        <p class="instagram-frame-note">最新情報はInstagramで随時更新中です。</p>
+        <a href="https://www.instagram.com/chuanshangheji5/" class="instagram-profile-link" target="_blank" rel="noopener">Instagramを見る</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -767,10 +1059,13 @@ footer {
       <h2 class="serif">和吉が大切にしていること</h2>
     </div>
     <p class="concept-text reveal">
-      気負わず立ち寄れて、自然と長居したくなること。<br>
-      炭火の焼き鳥も、日替わりの一品料理も、丁寧にお出しすること。<br>
+      気負わず立ち寄れて、<br>
+      自然と長居したくなること。<br>
+      炭火の焼き鳥も、<br>
+      日替わりの一品料理も、丁寧にお出しすること。<br>
       料理のおいしさだけでなく、<br>
-      「また来たい」と思える居心地の良い空間を大切にしています。
+      「また来たい」と思える<br>
+      居心地の良い空間を大切にしています。
     </p>
     <div class="usp-grid">
       <div class="usp-item reveal">
@@ -830,7 +1125,8 @@ footer {
     </div>
     <p class="menu-intro reveal">
       焼き鳥・お造り・煮込み・揚げ物など、<br>
-      その日の仕入れに合わせた一品料理を取り揃えています。
+      その日の仕入れに合わせた<br>
+      一品料理を取り揃えています。
     </p>
     <div class="menu-carousel reveal">
       <div class="menu-grid" id="menu-carousel">
@@ -971,6 +1267,7 @@ footer {
         <h4>MENU</h4>
         <ul>
           <li><a href="#concept">CONCEPT</a></li>
+          <li><a href="#instagram">INSTAGRAM</a></li>
           <li><a href="#menu">MENU</a></li>
           <li><a href="#gallery">GALLERY</a></li>
           <li><a href="#information">ACCESS</a></li>
@@ -1042,6 +1339,107 @@ if (track && prevBtn && nextBtn) {
   nextBtn.addEventListener('click', () => track.scrollBy({ left: 330, behavior: 'smooth' }));
 }
 
+// Instagram mobile carousel
+const instagramFeedId = 'tRNlYwXLClIADujxrIV8';
+const instagramWidget = document.getElementById('instagram-widget');
+const instagramMobileCarousel = document.getElementById('instagram-mobile-carousel');
+const instagramMobileTrack = document.getElementById('instagram-mobile-track');
+const instagramMobileCounter = document.getElementById('instagram-mobile-counter');
+if (instagramWidget && instagramMobileCarousel && instagramMobileTrack && instagramMobileCounter) {
+  let totalInstagramPosts = 3;
+
+  const updateInstagramCounter = (index = 0) => {
+    const safeTotal = Math.max(totalInstagramPosts, 1);
+    const safeIndex = Math.min(Math.max(index + 1, 1), safeTotal);
+    instagramMobileCounter.textContent = `${safeIndex}/${safeTotal}`;
+    instagramMobileCounter.classList.add('is-visible');
+  };
+
+  const truncateCaption = caption => {
+    const text = (caption || '').replace(/\s+/g, ' ').trim();
+    if (!text) return 'Instagramを見る';
+    return text.length > 60 ? `${text.slice(0, 60)}...` : text;
+  };
+
+  const formatInstagramDate = timestamp => {
+    if (!timestamp) return 'LATEST';
+    const date = new Date(timestamp);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}.${month}.${day}`;
+  };
+
+  const escapeHtml = value => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+  const renderInstagramMobileCarousel = posts => {
+    totalInstagramPosts = posts.length || 3;
+    instagramMobileTrack.innerHTML = posts.map((post, index) => {
+      const imageUrl = post?.sizes?.large?.mediaUrl || post?.sizes?.medium?.mediaUrl || post?.sizes?.full?.mediaUrl || post?.mediaUrl || '';
+      const caption = truncateCaption(post?.caption);
+      const permalink = post?.permalink || 'https://www.instagram.com/chuanshangheji5/';
+      const dateText = formatInstagramDate(post?.timestamp);
+      return `
+        <article class="instagram-mobile-slide" data-instagram-index="${index}">
+          <a class="instagram-mobile-card" href="${escapeHtml(permalink)}" target="_blank" rel="noopener" aria-label="Instagram投稿 ${index + 1}">
+            <div class="instagram-mobile-media">
+              <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(caption)}" loading="lazy">
+            </div>
+            <div class="instagram-mobile-body">
+              <div class="instagram-mobile-meta">
+                <span>最新情報</span>
+                <span>${escapeHtml(dateText)}</span>
+              </div>
+              <p class="instagram-mobile-caption">${escapeHtml(caption)}</p>
+            </div>
+          </a>
+        </article>
+      `;
+    }).join('');
+    updateInstagramCounter(0);
+  };
+
+  const syncInstagramMobileCounter = () => {
+    const slide = instagramMobileTrack.querySelector('.instagram-mobile-slide');
+    if (!slide) return;
+    const step = slide.offsetWidth || instagramMobileTrack.clientWidth || 1;
+    const index = Math.min(totalInstagramPosts - 1, Math.max(0, Math.round(instagramMobileTrack.scrollLeft / step)));
+    updateInstagramCounter(index);
+  };
+
+  instagramMobileTrack.addEventListener('scroll', syncInstagramMobileCounter, { passive: true });
+  window.addEventListener('resize', syncInstagramMobileCounter);
+
+  fetch(`https://feeds.behold.so/${instagramFeedId}`)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      const posts = (data.posts || data.media || []).slice(0, 3);
+      if (!posts.length) throw new Error('No posts');
+      renderInstagramMobileCarousel(posts);
+    })
+    .catch(() => {
+      instagramMobileTrack.innerHTML = `
+        <article class="instagram-mobile-slide">
+          <a class="instagram-mobile-card" href="https://www.instagram.com/chuanshangheji5/" target="_blank" rel="noopener" aria-label="Instagramを見る">
+            <div class="instagram-mobile-media" style="display:grid;place-items:center;color:var(--text-muted);padding:24px;text-align:center;">
+              Instagramを見る
+            </div>
+          </a>
+        </article>
+      `;
+      totalInstagramPosts = 1;
+      updateInstagramCounter(0);
+    });
+}
+
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
@@ -1053,6 +1451,18 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
+</script>
+<script>
+  (() => {
+    const d = document;
+    const hasBeholdScript = d.querySelector('script[data-behold-widget]');
+    if (hasBeholdScript) return;
+    const s = d.createElement('script');
+    s.type = 'module';
+    s.src = 'https://w.behold.so/widget.js';
+    s.dataset.beholdWidget = 'true';
+    d.head.append(s);
+  })();
 </script>
 </body>
 </html>
